@@ -8,7 +8,8 @@ services:
       - mongodb
     ports:
       - "4567:4567"
-
+    volumes:
+      - nodeBBuploads:/usr/src/app/public/uploads
   mongodb:
     image: mongo:bionic
     restart: unless-stopped
@@ -25,4 +26,5 @@ services:
       - .env
 
 volumes:
+  nodeBBuploads:
   mongodb:
